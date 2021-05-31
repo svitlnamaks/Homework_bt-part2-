@@ -7,9 +7,15 @@
 # contains: [] - list of symbols that an argument should contain
 # If some of the rules
 # ' checks returns False, the function should return False and print the reason it failed; otherwise, return the result.
+from functools import wraps
 
 def arg_rules(type_: type, max_length: int, contains: list):
-    def
+    def arg_check(func):
+        @wraps(func)
+        def wrap(*args,**kwargs):
+            my_func=func(*args,**kwargs)
+
+
 
         pass
 

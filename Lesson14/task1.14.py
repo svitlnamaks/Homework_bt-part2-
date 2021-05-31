@@ -5,13 +5,11 @@
 # For example:
 
 # "add called with 4, 5"
-from functools import wraps
 
 
 def logger(func):
-    @wraps(func)
-    def wrapped_func(*args):
-        return f'Function {func.__name__} was called .Function takes following arguments {args}'
+    def wrapped_func(*args, **kwargs):
+        return f'Function {func.__name__} was called .Function takes following arguments {args} {kwargs}'
 
     return wrapped_func
 
@@ -27,5 +25,5 @@ def square_all(*args):
 
 
 if __name__ == '__main__':
-    print(square_all(1, 2, 3, 4, 5, ))
+    print(square_all(1, 2, 3, 4, 5 ))
     print(add(5, 6))
