@@ -10,6 +10,7 @@ def stop_words_list(words: list, space='=( '):
         def wrap(*args, **kwargs):
             our_func = func(*args, **kwargs)
             rep = ''
+
             for word in str(our_func).split():
                 if word in words:
                     rep += space
